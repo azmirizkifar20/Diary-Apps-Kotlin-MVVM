@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Diary Jurnal</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buat_diary">Buat Diary</string>
+    <string name="tuliskan_cerita">Tuliskan cerita</string>
+    <string name="title"><![CDATA[<u><h2>List Quotes Gan</h2></u>]]></string>
+    <string name="time"><![CDATA[<b>Start:</b>]]></string>
+    <string name="hapus_diary">Hapus Diary</string>
+</resources>
