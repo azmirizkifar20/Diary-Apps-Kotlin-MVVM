@@ -15,6 +15,7 @@ fun convertLongToDateString(systemTime: Long): String {
         .format(systemTime).toString()
 }
 
+// ga kepake
 fun formatDiary(diary:List<Diary>, resources: Resources): Spanned {
     val sb = StringBuilder()
     sb.apply{

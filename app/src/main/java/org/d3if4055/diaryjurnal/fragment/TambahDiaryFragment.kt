@@ -15,10 +15,8 @@ import org.d3if4055.diaryjurnal.databinding.FragmentTambahDiaryBinding
 import org.d3if4055.diaryjurnal.viewmodel.DiaryViewModel
 import org.d3if4055.diaryjurnal.viewmodel.DiaryViewModelFactor
 
-/**
- * A simple [Fragment] subclass.
- */
-class tambahDiaryFragment : Fragment() {
+class TambahDiaryFragment : Fragment() {
+
     private lateinit var binding: FragmentTambahDiaryBinding
 
     override fun onCreateView(
@@ -29,6 +27,12 @@ class tambahDiaryFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_tambah_diary, container, false)
 
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         val application = requireNotNull(this.activity).application
         val dataSource = DiaryDatabase.getInstance(application).DiaryDao
         val viewModelFactory = DiaryViewModelFactor(dataSource, application)
@@ -38,8 +42,6 @@ class tambahDiaryFragment : Fragment() {
             diaryViewModel.onClickInsert(binding.etDiary.text.toString())
             it.findNavController().navigate(R.id.action_tambahDiaryFragment_to_homeFragment)
         }
-
-        return binding.root
     }
 
     private fun judul() {

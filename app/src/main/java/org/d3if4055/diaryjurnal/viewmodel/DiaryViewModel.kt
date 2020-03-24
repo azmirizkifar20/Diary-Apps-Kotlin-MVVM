@@ -6,6 +6,7 @@ import androidx.lifecycle.Transformations
 import kotlinx.coroutines.*
 import org.d3if4055.diaryjurnal.database.Diary
 import org.d3if4055.diaryjurnal.database.DiaryDao
+import org.d3if4055.diaryjurnal.recyclerview.DiaryAdapter
 import org.d3if4055.diaryjurnal.utils.formatDiary
 
 class DiaryViewModel(
@@ -16,15 +17,10 @@ class DiaryViewModel(
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
     val diary = database.getDiary()
 
-    val hasilDiary = Transformations.map(diary) {
-        diary -> formatDiary(diary, application.resources)
-    }
-
     fun onClickInsert(message: String) {
         uiScope.launch {
             val diary = Diary(0, message)
             insert(diary)
-
         }
     }
 
@@ -45,4 +41,5 @@ class DiaryViewModel(
             database.clear()
         }
     }
+
 }

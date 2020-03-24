@@ -60,4 +60,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
 
+    // support recyclerview
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
 }
