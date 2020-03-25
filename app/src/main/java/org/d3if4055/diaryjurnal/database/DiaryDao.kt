@@ -1,10 +1,7 @@
 package org.d3if4055.diaryjurnal.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
 @Dao
 interface DiaryDao {
@@ -20,5 +17,8 @@ interface DiaryDao {
 
     @Query("DELETE FROM diary")
     fun clear()
+
+    @Query("DELETE FROM diary WHERE id = :diaryId")
+    fun delete(diaryId: Long)
 
 }

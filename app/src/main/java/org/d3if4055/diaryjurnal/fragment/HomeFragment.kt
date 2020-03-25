@@ -2,6 +2,7 @@ package org.d3if4055.diaryjurnal.fragment
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -16,7 +17,7 @@ import org.d3if4055.diaryjurnal.databinding.FragmentHomeBinding
 import org.d3if4055.diaryjurnal.recyclerview.DiaryAdapter
 import org.d3if4055.diaryjurnal.recyclerview.RecyclerViewClickListener
 import org.d3if4055.diaryjurnal.viewmodel.DiaryViewModel
-import org.d3if4055.diaryjurnal.viewmodel.DiaryViewModelFactor
+import org.d3if4055.diaryjurnal.viewmodel.DiaryViewModelFactory
 
 class HomeFragment : Fragment(),
     RecyclerViewClickListener {
@@ -42,7 +43,7 @@ class HomeFragment : Fragment(),
         // untuk ambil diaryViewModel
         val application = requireNotNull(this.activity).application
         val dataSource = DiaryDatabase.getInstance(application).DiaryDao
-        val viewModelFactory = DiaryViewModelFactor(dataSource, application)
+        val viewModelFactory = DiaryViewModelFactory(dataSource, application)
         val diaryViewModel = ViewModelProvider(this, viewModelFactory).get(DiaryViewModel::class.java)
 
         // observe diary
@@ -92,21 +93,21 @@ class HomeFragment : Fragment(),
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val application = requireNotNull(this.activity).application
         val dataSource = DiaryDatabase.getInstance(application).DiaryDao
-        val viewModelFactory = DiaryViewModelFactor(dataSource, application)
+        val viewModelFactory = DiaryViewModelFactory(dataSource, application)
         val diaryViewModel = ViewModelProvider(this, viewModelFactory).get(DiaryViewModel::class.java)
 
         return when (item.itemId) {
             R.id.hapus_diary -> {
                 diaryViewModel.onClickClear()
+                Toast.makeText(requireContext(), R.string.success_remove, Toast.LENGTH_SHORT).show()
                 return true
             }
             else -> super.onOptionsItemSelected(item)
         }
-
     }
 
     private fun judul() {
         val getActivity = activity!! as MainActivity
-        getActivity.supportActionBar?.title = "Diary Saya (6706184055)"
+        getActivity.supportActionBar?.title = "Diary Saya"
     }
 }

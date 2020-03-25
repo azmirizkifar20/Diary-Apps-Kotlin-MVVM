@@ -9,4 +9,8 @@
     <string name="tanggal">Jumat, 17 Januari 2020</string>
     <string name="text_message">Wadaw ulala wadidaw digidaw awe awe</string>
     <string name="null_message">Cerita harus diisi!</string>
+    <string name="success_insert">Berhasil menambahkan cerita!</string>
+    <string name="success_update">Berhasil update cerita!</string>
+    <string name="success_remove">Berhasil hapus cerita!</string>
+    <string name="insert">insert</string>
 </resources>

@@ -10,6 +10,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // membuat tombol back
         val navController = this.findNavController(R.id.fragmentHomeNav)
         NavigationUI.setupActionBarWithNavController(this, navController)
     }

@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import org.d3if4055.diaryjurnal.database.DiaryDao
 
-class DiaryViewModelFactor(
+class DiaryViewModelFactory(
     private val dataSource: DiaryDao,
     private val application: Application) : ViewModelProvider.Factory {
     @Suppress("unchecked_cast")

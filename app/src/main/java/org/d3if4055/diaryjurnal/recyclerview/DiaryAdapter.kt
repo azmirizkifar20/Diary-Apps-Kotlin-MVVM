@@ -28,6 +28,7 @@ class DiaryAdapter(private val diary: List<Diary>) : RecyclerView.Adapter<DiaryA
     )
 
     override fun onBindViewHolder(holder: DiaryViewHolder, position: Int) {
+        // set tangggal dan messagenya untuk ditampilkan
         holder.recyclerviewDiaryBinding.tvDate.text = convertLongToDateString(diary[position].tanggal)
         holder.recyclerviewDiaryBinding.tvMessage.text = diary[position].message
 
