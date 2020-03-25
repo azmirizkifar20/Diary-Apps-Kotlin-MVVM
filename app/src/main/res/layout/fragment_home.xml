@@ -15,7 +15,7 @@
             tools:listitem="@layout/recyclerview_diary" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab1"
+            android:id="@+id/fab_tulis_diary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"

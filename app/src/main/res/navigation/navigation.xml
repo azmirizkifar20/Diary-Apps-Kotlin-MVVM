@@ -29,5 +29,9 @@
     <fragment
         android:id="@+id/editDiaryFragment"
         android:name="org.d3if4055.diaryjurnal.fragment.EditDiaryFragment"
-        android:label="EditDiaryFragment" />
+        android:label="EditDiaryFragment" >
+        <action
+            android:id="@+id/action_editDiaryFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
