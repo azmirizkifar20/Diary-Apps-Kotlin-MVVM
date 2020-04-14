@@ -138,6 +138,6 @@ class HomeFragment : Fragment(),
 
     private fun judul() {
         val getActivity = activity!! as MainActivity
-        getActivity.supportActionBar?.title = "Diary Saya"
+        getActivity.supportActionBar?.title = "Diary Saya (6706184055)"
     }
 }
